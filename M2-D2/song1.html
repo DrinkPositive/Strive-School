@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Song 1</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <span id="navbar">Navbar</span>
+      <div class="ways">
+        <span>Albums</span>
+        <span>Songs</span>
+        <span>Artists</span>
+      </div>
+    </nav>
+
+    <div id="song-container" class="container">
+      <div class="songinfo">
+        <h1>Song 1</h1>
+        <div id="image" class="image"></div>
+
+        <div id="info">
+          <span id="first">Artist</span>
+          <h5>Croatia Squad</h5>
+
+          <span>Title</span>
+          <h5>Café Brasil</h5>
+
+          <span>Lenght</span>
+          <h5>1:23,45</h5>
+
+          <span>Genre</span>
+          <h5>Funk</h5>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-youtube"></a>
+    </footer>
+  </body>
+
+  <script>
+    const showImagesButton = document.getElementById("image");
+    showImagesButton.addEventListener("click", () => {
+      const images = document.getElementById("info");
+      if (images.className.includes("hidden")) {
+        images.classList.remove("hidden");
+      } else {
+        images.classList.add("hidden");
+      }
+    });
+  </script>
+</html>
