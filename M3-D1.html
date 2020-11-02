@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            1)
+            Create a function to calculate the sum of the two given integers. If the two values are same, then returns triple their sum.
+            */
+
+      function sumTriple(x, y) {
+        if (x == y) {
+          return 3 * (x + y);
+        } else {
+          return x + y;
+        }
+      }
+      console.log(sumTriple(10, 10));
+
+      /*
+            2)
+            Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
+            */
+
+      function ifFifty(x, y) {
+        if (x == 50 || y == 50 || x + y == 50) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(ifFifty(10, 10));
+
+      /*
+            3)
+            Create a function to remove a character at the specified position of a given string and return the new string.
+            */
+
+      function remove_character(str, char_pos) {
+        part1 = str.substring(0, char_pos);
+        part2 = str.substring(char_pos + 1, str.length);
+        return part1 + part2;
+      }
+
+      console.log(remove_character("Python", 0));
+
+      /*
+            4)
+             Create a function to find the largest of three given integers.
+            */
+
+      function max_of_three(x, y, z) {
+        max_val = 0;
+        if (x > y) {
+          max_val = x;
+        } else {
+          max_val = y;
+        }
+        if (z > max_val) {
+          max_val = z;
+        }
+        return max_val;
+      }
+
+      console.log(max_of_three(1000, 510, 440));
+
+      /*
+            5)
+            Create a function to check whether two numbers are in range 40..60 or in the range 70..100 inclusive.
+            */
+
+      function numbers_ranges(x, y) {
+        if (
+          (x >= 40 && x <= 60 && y >= 40 && y <= 60) ||
+          (x >= 70 && x <= 100 && y >= 70 && y <= 100)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(numbers_ranges(42, 40));
+
+      /*
+            6)
+            Create a function to create a new string of specified copies (positive number) of a given string.
+            */
+
+      function newstring(str) {
+        if (str.length >= 3) {
+          result_str = str.substring(str.length - 3);
+          return result_str + result_str + result_str + result_str;
+        } else return false;
+      }
+      console.log(newstring("JavaScript"));
+
+      /*
+            7)
+            Create a function to display the city name if the string begins with "Los" or "New" otherwise return blank.
+            */
+
+      function city_name(str) {
+        if (
+          str.length >= 3 &&
+          (str.substring(0, 3) == "Los" || str.substring(0, 3) == "New")
+        ) {
+          return str;
+        }
+
+        return "";
+      }
+
+      console.log(city_name("New York"));
+      console.log(city_name("Los Angeles"));
+      console.log(city_name("London"));
+
+      /*
+            8)
+            Create a function to calculate the sum of three elements of a given array of integers of length 3.
+            */
+
+      function sum_three(nums) {
+        return nums[0] + nums[1] + nums[2];
+      }
+
+      console.log(sum_three([10, 32, 20]));
+
+      /*
+            9)
+            Create a function to test whether an array of integers of length 2 contains 1 or a 3.
+            */
+
+      function contins13(nums) {
+        if (nums.indexOf(1) != -1 || nums.indexOf(3) != -1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(contins13([1, 5]));
+
+      /*
+            10)
+            Create a function to test whether an array of integers of length 2 does not contain 1 or a 3
+      */
+
+      function is13(nums) {
+        if (nums.indexOf(1) == -1 && nums.indexOf(3) == -1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(is13([7, 8]));
+
+      /*
+            11)
+            Create a function to find the longest string from a given array of strings.
+            */
+
+      function longest_string(str_ara) {
+        var max = str_ara[0].length;
+        str_ara.map((v) => (max = Math.max(max, v.length)));
+        result = str_ara.filter((v) => v.length == max);
+        return result;
+      }
+
+      console.log(longest_string(["a", "aa", "aaa", "aaaaa", "aaaa"]));
+
+      /*
+            12)
+            Create a function to find the types of a given angle.
+            Types of angles:
+                Acute angle: An angle between 0 and 90 degrees.
+                Right angle: An 90 degree angle.
+                btuse angle: An angle between 90 and 180 degrees.
+                Straight angle: A 180 degree angle.
+            */
+
+      function angle_Type(angle) {
+        if (angle < 90) {
+          return "Acute angle.";
+        }
+        if (angle === 90) {
+          return "Right angle.";
+        }
+        if (angle < 180) {
+          return "Obtuse angle.";
+        }
+        return "Straight angle.";
+      }
+
+      console.log(angle_Type(47));
+
+      /*
+            13)
+            Create a function to find the index of the greatest element of a given array of integers
+            */
+
+      function Kth_greatest_in_array(arr, k) {
+        for (var i = 0; i < k; i++) {
+          var max_index = i,
+            tmp = arr[i];
+
+          for (var j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[max_index]) {
+              max_index = j;
+            }
+          }
+
+          arr[i] = arr[max_index];
+          arr[max_index] = tmp;
+        }
+
+        return arr[k - 1];
+      }
+
+      console.log(Kth_greatest_in_array([1, 2, 6, 4, 5], 3));
+
+      /*
+            14)
+            Create a function to get the largest even number from an array of integers.
+            */
+
+      function max_even(arra) {
+        arra.sort((x, y) => y - x);
+
+        for (var i = 0; i < arra.length; i++) {
+          if (arra[i] % 2 == 0) return arra[i];
+        }
+      }
+
+      console.log(max_even([20, 40, 200]));
+
+      /*
+            15)
+            Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
+            */
+
+      function max_even(x, y) {
+        return x == 50 || y == 50 || x + y == 50;
+      }
+      console.log(max_even(10, 40));
+
+      /*
+            16)
+            Create a function to check from two given integers, whether one is positive and another one is negative.
+            */
+
+      function positive_negative(x, y) {
+        if ((x < 0 && y > 0) || (x > 0 && y < 0)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(positive_negative(2, 2));
+
+      /*
+            17)
+            Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case.
+                  */
+
+      function upper_lower(str) {
+        if (str.length < 3) {
+          return str.toUpperCase();
+        }
+        front_part = str.substring(0, 3).toLowerCase();
+        back_part = str.substring(3, str.length);
+        return front_part + back_part;
+      }
+      console.log(upper_lower("Python"));
+
+      /*
+            18)
+            Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+            */
+
+      function sortaSum(x, y) {
+        const sum_nums = x + y;
+        if (sum_nums >= 50 && sum_nums <= 80) {
+          return 65;
+        }
+        return 80;
+      }
+
+      console.log(sortaSum(30, 20));
+
+      /*
+            19)
+            Create a function to convert a number to a string, the contents of which depend on the number's factors. Follow next example:
+            If the number has 3 as a factor, output 'Diego'.
+            If the number has 5 as a factor, output 'Riccardo'.
+            If the number has 7 as a factor, output 'Stefano'.
+            If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+            Examples
+            28's factors are 1, 2, 4, 7, 14, 28.
+            this would be a simple "Stefano".
+            30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+            this would be a "DiegoRiccardo".
+            34 has four factors: 1, 2, 17, and 34.
+            this would be "34".
+            */
+
+      function checkName(number) {
+        if (number % 3 == 0) {
+          return "Diego";
+        }
+        if (number % 5 == 0 || number % 7 == 0) {
+          return "Riccardo";
+        }
+
+        if (number % 7 == 0 || number % 7 == 0) {
+          return "Stefano";
+        }
+      }
+      console.log(checkName(15));
+
+      /*
+            20)
+            Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+            */
+
+      var input = "Content Management System";
+      var abbr = input.match(/[A-Z]/g).join("");
+      console.log(abbr);
+    </script>
+  </body>
+</html>
